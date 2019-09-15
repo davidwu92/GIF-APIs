@@ -1,12 +1,16 @@
+/* "Anime Gifs Finder" */
 h3 {
   margin-left: 20px;
 }
 
+/* Red buttons @ top */
 a {
-  margin: 10px;
+  margin: 15px;
 }
 
+/* GIFs in each card */
 img {
   width: 100%;
   height: 100%;
+  margin-top: 5px;
 }
