@@ -4,25 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Anime Gifs Finder</title>
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <div class="container">
+  <h3>Anime GIFs Finder</h3>
+  <div class="container"></div>
     <div id="topics" class="row">
       <!-- Topic buttons go here -->
     </div>
-
+    
     <div class="row">
       <div id = "gifs" class="col s9">
         <!-- GIFS go here -->
+        
       </div>
-      <div class="col s3">
-        <p>Add an anime</p>
+      <div id = "form" class="col s3">
+        <form>
+          <p>Add an anime:</p> 
+          <input id="newTopic" type="text" name="anime" value="">
+            <br>
+          <input id="submit" type="submit" value="submit">
+        </form>
+        <!-- <p>Add an anime</p>
         <input id = "newTopic" type="text">
-        <button id = "submit">Submit</button>
+        <button id = "submit">Submit</button> -->
       </div>
 
     </div>
