@@ -31,6 +31,7 @@ document.addEventListener(`click`, e =>{
                gifcard.innerHTML = `
                   <div class = "col s4">
                      <div class = "card">
+                        <h5>${data.data[i].title}</h5>
                         <span class="card-title">${cardtitle}</span>
                         <img src="${data.data[i].images.original_still.url}" id="${data.data[i].id}">
                      </div>

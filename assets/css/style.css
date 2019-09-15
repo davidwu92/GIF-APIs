@@ -8,6 +8,18 @@ a {
   margin: 15px;
 }
 
+/*GIF titles */
+h5 {
+   text-transform: capitalize;
+   text-align: center;
+}
+
+/* GIF RATINGS (ironic, I know)*/
+.card-title{
+   text-transform: capitalize;
+   margin-left: 5%;
+}
+
 /* GIFs in each card */
 img {
   width: 100%;
