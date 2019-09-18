@@ -22,33 +22,30 @@ document.addEventListener(`click`, e =>{
       .then(r => r.json())
       .then(data => {
 //Space for me to grab the right things from the API
-   //Checking the data.data array:
-      console.log(data.data[1])
          for (let i = 0; i<30; i++) { //creates 30 cards in which we'll put gifs
-            if(data.data[i].rating !== "r") {
-               let gifcard = document.createElement("div");
-               let cardtitle = `Rating: ${data.data[i].rating}`;
-               gifcard.innerHTML = `
-                  <div class = "col s4">
-                     <div class = "card">
-                        <h5>${data.data[i].title}</h5>
-                        <span class="card-title">${cardtitle}</span>
-                        <img src="${data.data[i].images.original_still.url}" id="${data.data[i].id}">
-                     </div>
-                  </div>`; //gifs are still until clicked.
-               document.getElementById('gifs').appendChild(gifcard);
-               //Listen for click on each <img> and toggle animation
-               let isMoving = false;
-               document.getElementById(`${data.data[i].id}`).addEventListener('click', e => {
-                  if (isMoving === false) {
-                     e.target.setAttribute(`src`, `${data.data[i].images.original.url}`);
-                     isMoving = true;
-                  } else {
-                     e.target.setAttribute(`src`, `${data.data[i].images.original_still.url}`);
-                     isMoving = false;
-                  }
-               })
-            }
+            let gifcard = document.createElement("div");
+            let cardtitle = `Rating: ${data.data[i].rating}`;
+            gifcard.innerHTML = `
+               <div class = "col s4">
+                  <div class = "card">
+                     <h5>${data.data[i].title}</h5>
+                     <span class="card-title">${cardtitle}</span>
+                     <img src="${data.data[i].images.original_still.url}" id="${data.data[i].id}">
+                  </div>
+               </div>`; //gifs are still until clicked.
+            document.getElementById('gifs').appendChild(gifcard);
+
+            //Listen for click on each <img> and toggle animation
+            let isMoving = false;
+            document.getElementById(`${data.data[i].id}`).addEventListener('click', e => {
+               if (isMoving === false) {
+                  e.target.setAttribute(`src`, `${data.data[i].images.original.url}`);
+                  isMoving = true;
+               } else {
+                  e.target.setAttribute(`src`, `${data.data[i].images.original_still.url}`);
+                  isMoving = false;
+               }
+            })
          }
       })
       .catch(e => console.log(e));
